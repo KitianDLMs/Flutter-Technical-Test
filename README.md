@@ -1,6 +1,5 @@
 # movies
 
-A new Flutter project.
 Proyecto de postulación a Equifax
 
 ## Movies App
