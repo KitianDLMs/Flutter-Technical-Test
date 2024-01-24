@@ -12,10 +12,10 @@ class searchbarfun extends StatefulWidget {
   const searchbarfun({super.key});
 
   @override
-  State<searchbarfun> createState() => _searchbarfunState();
+  State<searchbarfun> createState() => searchbarfunState();
 }
 
-class _searchbarfunState extends State<searchbarfun> {
+class searchbarfunState extends State<searchbarfun> {
   List<Map<String, dynamic>> searchresult = [];
 
   Future<void> searchlistfunction(val) async {

@@ -24,28 +24,6 @@ class drawerfunc extends StatefulWidget {
 class _drawerfuncState extends State<drawerfunc> {
   File? _image;
 
-  Future<void> SelectImage() async {
-    // final pickedfile =
-    //     await ImagePicker().(source: ImageSource.gallery);
-    // if (pickedfile != null) {
-    //   CroppedFile? cropped = await ImageCropper().cropImage(
-    //     sourcePath: pickedfile.path,
-    //     aspectRatioPresets: [
-    //       CropAspectRatioPreset.square,
-    //       CropAspectRatioPreset.ratio3x2,
-    //       CropAspectRatioPreset.original,
-    //       CropAspectRatioPreset.ratio4x3,
-    //       CropAspectRatioPreset.ratio16x9
-    //     ],
-    //   );
-    //   SharedPreferences sp = await SharedPreferences.getInstance();
-    //   sp.setString('imagepath', cropped!.path);
-    //   _image = cropped as File?;
-    // } else {
-    //   print('No image selected.');
-    // }
-  }
-
   @override
   void initState() {
     super.initState();
@@ -69,7 +47,6 @@ class _drawerfuncState extends State<drawerfunc> {
                   children: [
                     GestureDetector(
                       onTap: () async {
-                        await SelectImage();
                         //toast message
                         Fluttertoast.showToast(
                             msg: "Image Changed",
