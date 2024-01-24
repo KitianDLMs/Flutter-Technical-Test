@@ -12,6 +12,10 @@ Este proyecto es el punto de partida para la conexion a una api real (agregar me
 
 * Otros detalles
 
+- La app cumple con los requerimientos especificados en el documento entregado(Obtiene un listado de peliculas y/o series ordenadas por popularidad y evaluacion, se puede acceder al detalle de cada pelicula y serie y tambien se puede buscar una pelicula o serie por el nombre)
+
+- En cuanto a los requerimientos tecnicos lo unico que me falta es la prueba unitaria
+
 - En este proyecto el patron de diseño que mas destaco su uso es el patron singleton, que esta dentro del metodo main, se utiliza para obtener una instancia unica de las preferencias compartidas o shared preferences. SharedPreferences se utiliza como una unica instancia para almacenar datos persistentes, sirve para almacenar el token del login en caso de que existiera en esta app, en el caso de esta app se usa para guardar y obtener(get) la cadena de imagepath. Este patrón tabien se usa en la llamada a la api
 
 - La app utiliza, una estructura de directorios sugerida por clean architecture, especificamente para Flutter
