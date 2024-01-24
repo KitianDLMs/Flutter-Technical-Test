@@ -1,16 +1,16 @@
 # movies
 
 A new Flutter project.
+Proyecto de postulación a Equifax
 
-## Getting Started
+## Movies App
 
-This project is a starting point for a Flutter application.
+Este proyecto es el punto de partida para la conexion a una api real (metodos: post, put, get/:id, delete, patch)
 
-A few resources to get you started if this is your first Flutter project:
+* Detalles destacables de la app
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- En este proyecto el patron de diseño que mas destaco su uso es el patron singleton, que esta dentro del metodo main, se utiliza para obtener una instancia unica de las preferencias compartidas o shared preferences. SharedPreferences se utiliza como una unica instancia para almacenar datos persistentes, sirve para almacenar el token del login en caso de que existiera en esta app, en el caso de esta app se usa para guardar y obtener(get) la cadena de imagepath. Este patrón tabien se usa en la llamada a la api
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- La app utiliza, una estructura de directorios sugerida por clean architecture, especificamente para Flutter
+
+- Lo que no he logrado hasta ahora es realizar una prueba unitaria, aunque creo que es por la forma en la que llamo a la api, ya he consultado con la IA y tampoco a logrado hacer la prueba unitaria
