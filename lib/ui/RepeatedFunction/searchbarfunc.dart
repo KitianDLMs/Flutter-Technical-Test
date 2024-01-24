@@ -16,7 +16,6 @@ class searchbarfun extends StatefulWidget {
 }
 
 class _searchbarfunState extends State<searchbarfun> {
-  ////////////////////////////////search bar function/////////////////////////////////////////////
   List<Map<String, dynamic>> searchresult = [];
 
   Future<void> searchlistfunction(val) async {
@@ -56,7 +55,6 @@ class _searchbarfunState extends State<searchbarfun> {
   final TextEditingController searchtext = TextEditingController();
   bool showlist = false;
   var val1;
-  ////////////////////////////////search bar function/////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -205,7 +203,6 @@ class _searchbarfunState extends State<searchbarfun> {
                                                               MainAxisAlignment
                                                                   .spaceBetween,
                                                           children: [
-                                                        ///////////////////////
                                                         //media type
                                                         Container(
                                                           alignment: Alignment

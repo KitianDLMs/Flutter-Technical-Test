@@ -111,7 +111,6 @@ class _MovieDetailsState extends State<MovieDetails> {
       }
     } else {}
     // print(similarmovieslist);
-    /////////////////////////////recommended movies
     var recommendedmoviesresponse =
         await http.get(Uri.parse(recommendedmoviesurl));
     if (recommendedmoviesresponse.statusCode == 200) {
@@ -127,7 +126,6 @@ class _MovieDetailsState extends State<MovieDetails> {
       }
     } else {}
     // print(recommendedmovieslist);
-    /////////////////////////////movie trailers
     var movietrailersresponse = await http.get(Uri.parse(movietrailersurl));
     if (movietrailersresponse.statusCode == 200) {
       var movietrailersjson = jsonDecode(movietrailersresponse.body);
@@ -271,27 +269,27 @@ class _MovieDetailsState extends State<MovieDetails> {
                         ],
                       ),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 10),
+                          padding: const EdgeInsets.only(left: 20, top: 10),
                           child: tittletext('Movie Story :')),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 10),
+                          padding: const EdgeInsets.only(left: 20, top: 10),
                           child: overviewtext(
                               MovieDetails[0]['overview'].toString())),
 
                       Padding(
-                        padding: EdgeInsets.only(left: 20, top: 10),
+                        padding: const EdgeInsets.only(left: 20, top: 10),
                         child: ReviewUI(revdeatils: UserREviews),
                       ),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
+                          padding: const EdgeInsets.only(left: 20, top: 20),
                           child: normaltext('Release Date : ' +
                               MovieDetails[0]['release_date'].toString())),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
+                          padding: const EdgeInsets.only(left: 20, top: 20),
                           child: normaltext('Budget : ' +
                               MovieDetails[0]['budget'].toString())),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
+                          padding: const EdgeInsets.only(left: 20, top: 20),
                           child: normaltext('Revenue : ' +
                               MovieDetails[0]['revenue'].toString())),
                       sliderlist(similarmovieslist, "Similar Movies", "movie",
@@ -304,7 +302,7 @@ class _MovieDetailsState extends State<MovieDetails> {
                     ]))
                   ]);
             } else {
-              return Center(
+              return const Center(
                   child: CircularProgressIndicator(
                 color: Colors.amber,
               ));

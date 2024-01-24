@@ -16,8 +16,8 @@ class _ReviewUIState extends State<ReviewUI> {
 
   @override
   Widget build(BuildContext context) {
-    List REviewDetails = widget.revdeatils;
-    if (REviewDetails.length == 0) {
+    List ReviewDetails = widget.revdeatils;
+    if (ReviewDetails.length == 0) {
       return Center();
     } else {
       return Column(
@@ -45,7 +45,7 @@ class _ReviewUIState extends State<ReviewUI> {
                     children: [
                       showall == false
                           ? Text(
-                              'All Reviews ' + '${REviewDetails.length} ',
+                              'All Reviews ' + '${ReviewDetails.length} ',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
@@ -76,7 +76,7 @@ class _ReviewUIState extends State<ReviewUI> {
                   height: MediaQuery.of(context).size.height * 0.65,
                   child: ListView.builder(
                       physics: BouncingScrollPhysics(),
-                      itemCount: REviewDetails.length,
+                      itemCount: ReviewDetails.length,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.only(
@@ -99,7 +99,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                                 shape: BoxShape.circle,
                                                 image: DecorationImage(
                                                     image: NetworkImage(
-                                                        REviewDetails[index]
+                                                        ReviewDetails[index]
                                                             ['avatarphoto']),
                                                     fit: BoxFit.cover)),
                                           ),
@@ -113,7 +113,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                               FittedBox(
                                                 fit: BoxFit.scaleDown,
                                                 child: Text(
-                                                  REviewDetails[index]['name'],
+                                                  ReviewDetails[index]['name'],
                                                   style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 16,
@@ -125,7 +125,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                                 height: 5,
                                               ),
                                               Text(
-                                                REviewDetails[index]
+                                                ReviewDetails[index]
                                                     ['creationdate'],
                                                 style: TextStyle(
                                                     color: Colors.white,
@@ -157,7 +157,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                           FittedBox(
                                             fit: BoxFit.scaleDown,
                                             child: Text(
-                                              REviewDetails[index]['rating'],
+                                              ReviewDetails[index]['rating'],
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 16,
@@ -175,7 +175,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                 children: [
                                   Expanded(
                                     child: overviewtext(
-                                      REviewDetails[index]['review'],
+                                      ReviewDetails[index]['review'],
                                     ),
                                   )
                                 ],
@@ -205,7 +205,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                     decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         image: DecorationImage(
-                                            image: NetworkImage(REviewDetails[0]
+                                            image: NetworkImage(ReviewDetails[0]
                                                 ['avatarphoto']),
                                             fit: BoxFit.cover)),
                                   ),
@@ -219,7 +219,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                       FittedBox(
                                         fit: BoxFit.scaleDown,
                                         child: Text(
-                                          REviewDetails[0]['name'],
+                                          ReviewDetails[0]['name'],
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 16,
@@ -230,7 +230,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                         height: 5,
                                       ),
                                       Text(
-                                        REviewDetails[0]['creationdate'],
+                                        ReviewDetails[0]['creationdate'],
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 12,
@@ -259,7 +259,7 @@ class _ReviewUIState extends State<ReviewUI> {
                                   FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: Text(
-                                      REviewDetails[0]['rating'],
+                                      ReviewDetails[0]['rating'],
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 16,
@@ -277,7 +277,7 @@ class _ReviewUIState extends State<ReviewUI> {
                         children: [
                           Expanded(
                             child: overviewtext(
-                              REviewDetails[0]['review'],
+                              ReviewDetails[0]['review'],
                             ),
                           )
                         ],
@@ -292,4 +292,4 @@ class _ReviewUIState extends State<ReviewUI> {
   }
 }
 
-// Widget ReviewUII(context, List REviewDetails) {}
+// Widget ReviewUII(context, List ReviewDetails) {}
