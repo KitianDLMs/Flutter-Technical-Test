@@ -93,7 +93,7 @@ class _TvSeriesState extends State<TvSeries> {
                 children: [
                   sliderlist(populartvseries, "Populares", "tv", 20),
                   sliderlist(onairtvseries, "En Cartelera", "tv", 20),
-                  sliderlist(topratedtvseries, "Top", "tv", 20)
+                  sliderlist(topratedtvseries, "Mejores Evaluados", "tv", 20)
                 ]);
           }
         });

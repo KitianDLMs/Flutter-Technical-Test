@@ -97,9 +97,9 @@ class _MovieState extends State<Movie> {
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  sliderlist(popularmovies, "Popular Now", "movie", 20),
-                  sliderlist(nowplayingmovies, "Now Playing", "movie", 20),
-                  sliderlist(topratedmovies, "Top Rated", "movie", 20)
+                  sliderlist(popularmovies, "Populares", "movie", 20),
+                  sliderlist(nowplayingmovies, "En cartelera", "movie", 20),
+                  sliderlist(topratedmovies, "Mejores Evaluados", "movie", 20)
                 ]);
           }
         });
