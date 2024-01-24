@@ -20,7 +20,6 @@ Widget sliderlist(
               return GestureDetector(
                   onTap: () {
                     if (type == 'movie') {
-                      // print(firstlistname[index]['id']);
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -28,7 +27,6 @@ Widget sliderlist(
                                     id: firstlistname[index]['id'],
                                   )));
                     } else if (type == 'tv') {
-                      // print(firstlistname[index]['id']);
                       Navigator.push(
                           context,
                           MaterialPageRoute(

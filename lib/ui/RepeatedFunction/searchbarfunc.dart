@@ -70,62 +70,64 @@ class _searchbarfunState extends State<searchbarfun> {
               const EdgeInsets.only(left: 10.0, top: 30, bottom: 20, right: 10),
           child: Column(
             children: [
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: TextField(
-                  autofocus: false,
-                  controller: searchtext,
-                  onSubmitted: (value) {
-                    searchresult.clear();
-                    setState(() {
-                      val1 = value;
-                      FocusManager.instance.primaryFocus?.unfocus();
-                    });
-                  },
-                  onChanged: (value) {
-                    searchresult.clear();
+              SafeArea(
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: TextField(
+                    autofocus: false,
+                    controller: searchtext,
+                    onSubmitted: (value) {
+                      searchresult.clear();
+                      setState(() {
+                        val1 = value;
+                        FocusManager.instance.primaryFocus?.unfocus();
+                      });
+                    },
+                    onChanged: (value) {
+                      searchresult.clear();
 
-                    setState(() {
-                      val1 = value;
-                    });
-                  },
-                  decoration: InputDecoration(
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          Fluttertoast.showToast(
-                              webBgColor: "#000000",
-                              webPosition: "center",
-                              webShowClose: true,
-                              msg: "Search Cleared",
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              timeInSecForIosWeb: 2,
-                              backgroundColor: Color.fromRGBO(18, 18, 18, 1),
-                              textColor: Colors.white,
-                              fontSize: 16.0);
+                      setState(() {
+                        val1 = value;
+                      });
+                    },
+                    decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            Fluttertoast.showToast(
+                                webBgColor: "#000000",
+                                webPosition: "center",
+                                webShowClose: true,
+                                msg: "Search Cleared",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 2,
+                                backgroundColor: Color.fromRGBO(18, 18, 18, 1),
+                                textColor: Colors.white,
+                                fontSize: 16.0);
 
-                          setState(() {
-                            searchtext.clear();
-                            FocusManager.instance.primaryFocus?.unfocus();
-                          });
-                        },
-                        icon: Icon(
-                          Icons.arrow_back_ios_rounded,
-                          color: Colors.amber.withOpacity(0.6),
+                            setState(() {
+                              searchtext.clear();
+                              FocusManager.instance.primaryFocus?.unfocus();
+                            });
+                          },
+                          icon: Icon(
+                            Icons.arrow_back_ios_rounded,
+                            color: Colors.amber.withOpacity(0.6),
+                          ),
                         ),
-                      ),
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Colors.amber,
-                      ),
-                      hintText: 'Buscar',
-                      hintStyle:
-                          TextStyle(color: Colors.white.withOpacity(0.2)),
-                      border: InputBorder.none),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.amber,
+                        ),
+                        hintText: 'Buscar',
+                        hintStyle:
+                            TextStyle(color: Colors.white.withOpacity(0.2)),
+                        border: InputBorder.none),
+                  ),
                 ),
               ),
               //

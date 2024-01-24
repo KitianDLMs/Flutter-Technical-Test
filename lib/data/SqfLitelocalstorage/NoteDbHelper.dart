@@ -70,14 +70,10 @@ class FavMovielist {
         [id, name, type]));
   }
 
-  ////sort by name
-
   Future<List<Map<String, dynamic>>> queryAllSorted() async {
     Database? db = await _instance.db;
     return await db!.query(tablename, orderBy: '$columnfavname ASC');
   }
-
-  ////sort by rating
 
   Future<List<Map<String, dynamic>>> queryAllSortedRating() async {
     Database? db = await _instance.db;

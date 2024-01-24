@@ -1,5 +1,4 @@
 import 'dart:convert';
-// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
@@ -20,44 +19,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   List<Map<String, dynamic>> trendingweek = [];
   int uval = 1;
-  // Future<void> trendinglist(int checkerno) async {
-  //   if (checkerno == 1) {
-  //     var trendingweekurl =
-  //         'https://api.themoviedb.org/3/trending/all/week?api_key=$apikey';
-  //     var trendingweekresponse = await http.get(Uri.parse(trendingweekurl));
-  //     if (trendingweekresponse.statusCode == 200) {
-  //       var tempdata = jsonDecode(trendingweekresponse.body);
-  //       var trendingweekjson = tempdata['results'];
-  //       for (var i = 0; i < trendingweekjson.length; i++) {
-  //         trendingweek.add({
-  //           'id': trendingweekjson[i]['id'],
-  //           'poster_path': trendingweekjson[i]['poster_path'],
-  //           'vote_average': trendingweekjson[i]['vote_average'],
-  //           'media_type': trendingweekjson[i]['media_type'],
-  //           'indexno': i,
-  //         });
-  //       }
-  //     }
-  //   } else if (checkerno == 2) {
-  //     var trendingweekurl =
-  //         'https://api.themoviedb.org/3/trending/all/day?api_key=$apikey';
-  //     var trendingweekresponse = await http.get(Uri.parse(trendingweekurl));
-  //     if (trendingweekresponse.statusCode == 200) {
-  //       var tempdata = jsonDecode(trendingweekresponse.body);
-  //       var trendingweekjson = tempdata['results'];
-  //       for (var i = 0; i < trendingweekjson.length; i++) {
-  //         trendingweek.add({
-  //           'id': trendingweekjson[i]['id'],
-  //           'poster_path': trendingweekjson[i]['poster_path'],
-  //           'vote_average': trendingweekjson[i]['vote_average'],
-  //           'media_type': trendingweekjson[i]['media_type'],
-  //           'indexno': i,
-  //         });
-  //       }
-  //     }
-  //   }
-  //   // print(trendingweek);
-  // }
 
   @override
   void initState() {
@@ -76,7 +37,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     return Scaffold(
         backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
-          //////////////////////////////////////////////End of Flexible bar///////////////////////////////////////////////////////////////
           SliverList(
               delegate: SliverChildListDelegate([
             searchbarfun(),
