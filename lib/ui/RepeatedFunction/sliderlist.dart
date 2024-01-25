@@ -66,17 +66,14 @@ Widget sliderlist(
                                             bottom: 2,
                                             left: 5,
                                             right: 5),
-                                        child: Row(
-                                            //row for rating
-                                            children: [
-                                              Icon(Icons.star,
-                                                  color: Colors.yellow,
-                                                  size: 15),
-                                              SizedBox(width: 2),
-                                              ratingtext(firstlistname[index]
-                                                      ['vote_average']
-                                                  .toString())
-                                            ]))))
+                                        child: Row(children: [
+                                          Icon(Icons.star,
+                                              color: Colors.yellow, size: 15),
+                                          SizedBox(width: 2),
+                                          ratingtext(firstlistname[index]
+                                                  ['vote_average']
+                                              .toString())
+                                        ]))))
                           ])));
             })),
     SizedBox(height: 20)

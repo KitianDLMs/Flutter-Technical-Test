@@ -70,7 +70,6 @@ class _ReviewUIState extends State<ReviewUI> {
             ),
           ),
           //
-          //show only one review
           showall == true
               ? Container(
                   height: MediaQuery.of(context).size.height * 0.65,
@@ -291,5 +290,3 @@ class _ReviewUIState extends State<ReviewUI> {
     }
   }
 }
-
-// Widget ReviewUII(context, List ReviewDetails) {}

@@ -7,8 +7,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../data/SqfLitelocalstorage/NoteDbHelper.dart';
 
-// Widget addtofavoriate(id, type, Details, context) {}
-
 class addtofavoriate extends StatefulWidget {
   var id, type, Details;
   addtofavoriate({
@@ -31,8 +29,6 @@ class _addtofavoriateState extends State<addtofavoriate> {
         print('notanythingfound');
         favoriatecolor = Colors.white;
       } else {
-        //print the tmdbname and tmdbid and tmdbtype and tmdbrating from database
-
         print('surelyfound');
         favoriatecolor = Colors.red;
       }
@@ -137,7 +133,6 @@ class _addtofavoriateState extends State<addtofavoriate> {
           ),
           GestureDetector(
             onTap: () {
-              //show dialog box with share option and copy link option and share to social media option and copy link option and share to social media option
               showDialog(
                   context: context,
                   builder: (context) {
@@ -196,7 +191,6 @@ class _addtofavoriateState extends State<addtofavoriate> {
                                   GestureDetector(
                                     onTap: () async {
                                       var url =
-                                          //share to whatsapp
                                           "https://wa.me/?text=Check%20out%20this%20link:%20https://www.themoviedb.org/$widget.type/$widget.id";
                                       await launch(url);
                                     },
@@ -253,12 +247,10 @@ class _addtofavoriateState extends State<addtofavoriate> {
                             SizedBox(height: 20),
                             GestureDetector(
                               onTap: () async {
-                                //copy link
                                 await Clipboard.setData(ClipboardData(
                                     text:
                                         "https://www.themoviedb.org/$widget.type/$widget.id"));
                                 Navigator.pop(context);
-                                //slutter toast for the message copied to clipboard
                                 Fluttertoast.showToast(
                                     msg: "Link Copied to Clipboard",
                                     toastLength: Toast.LENGTH_SHORT,

@@ -24,6 +24,5 @@ void main() {
 
     // Assert
     expect(searchbarState.searchresult, isNotEmpty);
-    // Agrega más aserciones según tus requisitos
   });
 }

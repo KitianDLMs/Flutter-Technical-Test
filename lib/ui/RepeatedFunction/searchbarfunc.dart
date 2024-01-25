@@ -40,8 +40,6 @@ class searchbarfunState extends State<searchbarfun> {
             'overview': searchjson[i]['overview'],
           });
 
-          // searchresult = searchresult.toSet().toList();
-
           if (searchresult.length > 20) {
             searchresult.removeRange(20, searchresult.length);
           }
@@ -59,7 +57,6 @@ class searchbarfunState extends State<searchbarfun> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // print("tapped");
         FocusManager.instance.primaryFocus?.unfocus();
         showlist = !showlist;
       },
@@ -133,8 +130,6 @@ class searchbarfunState extends State<searchbarfun> {
               SizedBox(
                 height: 5,
               ),
-
-              //if textfield has focus and search result is not empty then display search result
 
               searchtext.text.length > 0
                   ? FutureBuilder(
@@ -215,14 +210,11 @@ class searchbarfunState extends State<searchbarfun> {
                                                         Container(
                                                           child: Row(
                                                             children: [
-                                                              //vote average box
                                                               Container(
                                                                 padding:
                                                                     EdgeInsets
                                                                         .all(5),
                                                                 height: 30,
-                                                                // width:
-                                                                //     100,
                                                                 decoration: BoxDecoration(
                                                                     color: Colors
                                                                         .amber
@@ -259,7 +251,6 @@ class searchbarfunState extends State<searchbarfun> {
                                                                 width: 10,
                                                               ),
 
-                                                              //popularity
                                                               Container(
                                                                 padding:
                                                                     EdgeInsets

@@ -14,9 +14,6 @@ Future<void> main() async {
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: [SystemUiOverlay.bottom]);
-
-  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-  //     overlays: [SystemUiOverlay.bottom]);
 }
 
 class MyApp extends StatelessWidget {
@@ -26,10 +23,9 @@ class MyApp extends StatelessWidget {
     required this.imagepath,
   });
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: intermediatescreen(),
@@ -48,9 +44,7 @@ class _intermediatescreenState extends State<intermediatescreen> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      // disableNavigation: true,
       backgroundColor: Color.fromRGBO(18, 18, 18, 1),
-
       duration: 2000,
       nextScreen: MyHomePage(),
       splash: Container(
@@ -75,11 +69,8 @@ class _intermediatescreenState extends State<intermediatescreen> {
           ),
         ),
       ),
-
-      // splash: Image.asset('assets/images/background.jpg'),
       splashTransition: SplashTransition.fadeTransition,
       splashIconSize: 200,
-      // centered: false,
     );
   }
 }

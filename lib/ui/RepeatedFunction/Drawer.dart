@@ -47,7 +47,6 @@ class _drawerfuncState extends State<drawerfunc> {
                   children: [
                     GestureDetector(
                       onTap: () async {
-                        //toast message
                         Fluttertoast.showToast(
                             msg: "Image Changed",
                             toastLength: Toast.LENGTH_SHORT,
@@ -77,7 +76,6 @@ class _drawerfuncState extends State<drawerfunc> {
               ),
             ),
             listtilefunc('Home', Icons.home, ontap: () {
-              //close drawer
               Navigator.pop(context);
             }),
             listtilefunc('Favorite', Icons.favorite, ontap: () {
@@ -86,7 +84,6 @@ class _drawerfuncState extends State<drawerfunc> {
             }),
             listtilefunc('Our Blogs', FontAwesomeIcons.blogger,
                 ontap: () async {
-              //webview for blog
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -98,13 +95,7 @@ class _drawerfuncState extends State<drawerfunc> {
                           ),
                           body: WebViewWidget(
                             controller: WebViewController(),
-                          )
-
-                          // body: WebView(
-                          //   initialUrl: 'https://niranjandahal.com.np/',
-                          //   javascriptMode: JavascriptMode.unrestricted,
-                          // ),
-                          )));
+                          ))));
             }),
             listtilefunc('Our Website', FontAwesomeIcons.solidNewspaper,
                 ontap: () async {
@@ -117,11 +108,6 @@ class _drawerfuncState extends State<drawerfunc> {
                               backgroundColor: Color.fromRGBO(18, 18, 18, 0.9),
                               title: Text('Our Website'),
                             ),
-                            // body: WebView(
-                            //   initialUrl:
-                            //       'https://niranjandahalyt.blogspot.com/',
-                            //   javascriptMode: JavascriptMode.unrestricted,
-                            // ),
                           )));
             }),
             listtilefunc('Subscribe US', FontAwesomeIcons.youtube,

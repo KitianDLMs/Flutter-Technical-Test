@@ -70,7 +70,6 @@ class _MovieDetailsState extends State<MovieDetails> {
       }
     } else {}
 
-    /////////////////////////////User Reviews///////////////////////////////
     var UserReviewresponse = await http.get(Uri.parse(UserReviewurl));
     if (UserReviewresponse.statusCode == 200) {
       var UserReviewjson = jsonDecode(UserReviewresponse.body);
@@ -78,7 +77,6 @@ class _MovieDetailsState extends State<MovieDetails> {
         UserREviews.add({
           "name": UserReviewjson['results'][i]['author'],
           "review": UserReviewjson['results'][i]['content'],
-          //check rating is null or not
           "rating":
               UserReviewjson['results'][i]['author_details']['rating'] == null
                   ? "Not Rated"
@@ -96,7 +94,6 @@ class _MovieDetailsState extends State<MovieDetails> {
         });
       }
     } else {}
-    /////////////////////////////similar movies
     var similarmoviesresponse = await http.get(Uri.parse(similarmoviesurl));
     if (similarmoviesresponse.statusCode == 200) {
       var similarmoviesjson = jsonDecode(similarmoviesresponse.body);
@@ -110,7 +107,6 @@ class _MovieDetailsState extends State<MovieDetails> {
         });
       }
     } else {}
-    // print(similarmovieslist);
     var recommendedmoviesresponse =
         await http.get(Uri.parse(recommendedmoviesurl));
     if (recommendedmoviesresponse.statusCode == 200) {
@@ -125,7 +121,6 @@ class _MovieDetailsState extends State<MovieDetails> {
         });
       }
     } else {}
-    // print(recommendedmovieslist);
     var movietrailersresponse = await http.get(Uri.parse(movietrailersurl));
     if (movietrailersresponse.statusCode == 200) {
       var movietrailersjson = jsonDecode(movietrailersresponse.body);
@@ -146,7 +141,6 @@ class _MovieDetailsState extends State<MovieDetails> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -171,9 +165,6 @@ class _MovieDetailsState extends State<MovieDetails> {
                               SystemChrome.setEnabledSystemUIMode(
                                   SystemUiMode.manual,
                                   overlays: [SystemUiOverlay.bottom]);
-                              // SystemChrome.setEnabledSystemUIMode(
-                              //     SystemUiMode.manual,
-                              //     overlays: []);
                               SystemChrome.setPreferredOrientations([
                                 DeviceOrientation.portraitUp,
                                 DeviceOrientation.portraitDown,
@@ -209,14 +200,6 @@ class _MovieDetailsState extends State<MovieDetails> {
                               trailerytid: movietrailerslist[0]['key'],
                             ),
                           ),
-                          // background: FittedBox(
-                          //   fit: BoxFit.fill,
-                          //   child: Container(
-                          //     child: trailerwatch(
-                          //       trailerytid: movietrailerslist[0]['key'],
-                          //     ),
-                          //   ),
-                          // ),
                         )),
                     SliverList(
                         delegate: SliverChildListDelegate([
@@ -239,7 +222,6 @@ class _MovieDetailsState extends State<MovieDetails> {
                                     scrollDirection: Axis.horizontal,
                                     itemCount: MoviesGeneres.length,
                                     itemBuilder: (context, index) {
-                                      //generes box
                                       return Container(
                                           margin: EdgeInsets.only(right: 10),
                                           padding: EdgeInsets.all(10),
@@ -296,9 +278,6 @@ class _MovieDetailsState extends State<MovieDetails> {
                           similarmovieslist.length),
                       sliderlist(recommendedmovieslist, "Recommended Movies",
                           "movie", recommendedmovieslist.length),
-                      // Container(
-                      //     height: 50,
-                      //     child: Center(child: normaltext("By Niranjan Dahal")))
                     ]))
                   ]);
             } else {

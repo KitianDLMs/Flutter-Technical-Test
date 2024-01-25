@@ -45,10 +45,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
     var seriestrailersurl = 'https://api.themoviedb.org/3/tv/' +
         widget.id.toString() +
         '/videos?api_key=$apikey';
-    // 'https://api.themoviedb.org/3/tv/' +
-    //     widget.id.toString() +
-    //     '/videos?api_key=$apikey';
-
     var tvseriesdetailresponse = await http.get(Uri.parse(tvseriesdetailurl));
     if (tvseriesdetailresponse.statusCode == 200) {
       tvseriesdetaildata = jsonDecode(tvseriesdetailresponse.body);
@@ -80,7 +76,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
         });
       }
     } else {}
-    ///////////////////////////////////////////tvseries review///////////////////////////////////////////
 
     var tvseriesreviewresponse = await http.get(Uri.parse(tvseriesreviewurl));
     if (tvseriesreviewresponse.statusCode == 200) {
@@ -108,7 +103,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
         });
       }
     } else {}
-    ///////////////////////////////////////////similar series
 
     var similarseriesresponse = await http.get(Uri.parse(similarseriesurl));
     if (similarseriesresponse.statusCode == 200) {
@@ -123,7 +117,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
         });
       }
     } else {}
-    ///////////////////////////////////////////recommend series
 
     var recommendseriesresponse = await http.get(Uri.parse(recommendseriesurl));
     if (recommendseriesresponse.statusCode == 200) {
@@ -139,13 +132,10 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
       }
     } else {}
 
-    ///////////////////////////////////////////tvseries trailer///////////////////////////////////////////
     var tvseriestrailerresponse = await http.get(Uri.parse(seriestrailersurl));
     if (tvseriestrailerresponse.statusCode == 200) {
       var tvseriestrailerdata = jsonDecode(tvseriestrailerresponse.body);
-      // print(tvseriestrailerdata);
       for (var i = 0; i < tvseriestrailerdata['results'].length; i++) {
-        //add only if type is trailer
         if (tvseriestrailerdata['results'][i]['type'] == "Trailer") {
           seriestrailerslist.add({
             'key': tvseriestrailerdata['results'][i]['key'],
@@ -162,7 +152,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -182,29 +171,23 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                   slivers: [
                     SliverAppBar(
                         automaticallyImplyLeading: false,
-                        leading:
-                            //circular icon button
-                            IconButton(
-                                onPressed: () {
-                                  SystemChrome.setEnabledSystemUIMode(
-                                      SystemUiMode.manual,
-                                      overlays: [SystemUiOverlay.bottom]);
-                                  // SystemChrome.setEnabledSystemUIMode(
-                                  //     SystemUiMode.manual,
-                                  //     overlays: []);
-                                  SystemChrome.setPreferredOrientations([
-                                    DeviceOrientation.portraitUp,
-                                    DeviceOrientation.portraitDown,
-                                  ]);
-                                  Navigator.pop(context);
-                                },
-                                icon: Icon(FontAwesomeIcons.circleArrowLeft),
-                                iconSize: 28,
-                                color: Colors.white),
+                        leading: IconButton(
+                            onPressed: () {
+                              SystemChrome.setEnabledSystemUIMode(
+                                  SystemUiMode.manual,
+                                  overlays: [SystemUiOverlay.bottom]);
+                              SystemChrome.setPreferredOrientations([
+                                DeviceOrientation.portraitUp,
+                                DeviceOrientation.portraitDown,
+                              ]);
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(FontAwesomeIcons.circleArrowLeft),
+                            iconSize: 28,
+                            color: Colors.white),
                         actions: [
                           IconButton(
                               onPressed: () {
-                                //kill all previous routes and go to home page
                                 Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
@@ -287,7 +270,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                               itemCount:
                                   tvseriesdetaildata['created_by']!.length,
                               itemBuilder: (context, index) {
-                                //generes box
                                 return Container(
                                     margin: EdgeInsets.only(right: 10),
                                     padding: EdgeInsets.all(8),
@@ -315,7 +297,6 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                           padding: EdgeInsets.only(left: 10, top: 20),
                           child: normaltext("Total Seasons : " +
                               tvseriesdetaildata['seasons'].length.toString())),
-                      //airdate
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 20),
                           child: normaltext("Release date : " +
@@ -324,10 +305,7 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                           similarserieslist.length),
                       sliderlist(recommendserieslist, 'Recommended Series',
                           'tv', recommendserieslist.length),
-                      Container(
-                          //     height: 50,
-                          //     child: Center(child: normaltext("By Niranjan Dahal"))
-                          )
+                      Container()
                     ]))
                   ]);
             } else {

@@ -22,7 +22,6 @@ class _trailerwatchState extends State<trailerwatch> {
         enableCaption: true,
         autoPlay: false,
         mute: false,
-        // controlsVisibleAtStart: true,
         forceHD: true,
       ),
     );
